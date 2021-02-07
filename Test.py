@@ -25,8 +25,8 @@ def loginIG():
 	headers.update({'referer' : 'https://www.instagram.com/accounts/login/'})
 	
 	payload = {
-		'username' : 'Kada______',
-		'enc_password' : f'#PWD_INSTAGRAM_BROWSER:0:{time}:'+'Doctorghost7',
+		'username' : '',
+		'enc_password' : f'#PWD_INSTAGRAM_BROWSER:0:{time}:'+'',
 		'queryParams' : {},
 		'optIntoOneTap' : 'false'
 	}
@@ -66,8 +66,8 @@ def loginAddFast():
 #		'content-length' : '52',
 		'content-type' : 'application/x-www-form-urlencoded',
 		'x-requested-with' : 'XMLHttpRequest',
-		'referer' : 'https://addmefast.com/free_points/instagram_likes?act=getLinksList&network=32&page=1',
-		'timsend' : str(LikesData.cookies['timsenf'])
+		'referer' : 'https://addmefast.com/includes/ajax.php',
+#		'timsend' : str(LikesData.cookies['timsenf'])
 #		'accept-encoding' : 'gzip, deflate, br',
 #		'content-type' : 'text/html; charset=utf-8'
 	}
@@ -77,8 +77,8 @@ def loginAddFast():
 		'network' : '32',
 		'page' : '1'
 	}
-	FindUrl = 'https://addmefast.com/includes/ajax.php'
-	FindData = session.post(FindUrl, headers=headers, data=payload)
+	FindUrl = 'https://addmefast.com/free_points/instagram_likes'
+	FindData = session.post(FindUrl, headers=headers, params=payload)
 	print (FindData.status_code)
 	print (FindData.text)
 
